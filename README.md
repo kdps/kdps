@@ -1,5 +1,7 @@
 ### Hi there 👋
 
+I'm interesting for compose music, interpreter, framework, content manager system
+
 ![kdps's GitHub stats](https://github-readme-stats.vercel.app/api?username=kdps&show_icons=true)
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kdps&layout=compact)](https://github.com/kdps/github-readme-stats)
