@@ -1,5 +1,13 @@
 ### Hi there 👋
 
+![kdps's GitHub stats](https://github-readme-stats.vercel.app/api?username=kdps&show_icons=true)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=kdps&layout=compact)](https://github.com/kdps/github-readme-stats)
+
+## Skills
+
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,kotlin,nodejs,flutter,docker,c,git,swift,ts,webpack,php,mysql)](https://skillicons.dev)
+
 <!--
 **kdps/kdps** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
