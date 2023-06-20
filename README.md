@@ -6,7 +6,7 @@
 
 ## Skills
 
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,kotlin,nodejs,flutter,docker,c,git,swift,ts,webpack,php,mysql)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,kotlin,nodejs,flutter,docker,c,java,py,git,swift,ts,webpack,php,react,vue,mysql)](https://skillicons.dev)
 
 <!--
 **kdps/kdps** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
