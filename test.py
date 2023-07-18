@@ -128,8 +128,12 @@ if __name__ == '__main__':
 		#get a new set of samples
 		#print n,":",len(bpms),":",max_window_ndx,":",fs,":",nsamps,":",samps_ndx
 		data = samps[samps_ndx:samps_ndx+window_samps]
-		if not ((len(data) % window_samps) == 0):
-			raise AssertionError( str(len(data) ) ) 
+		
+		print "sex2"
+	
+		
+		#if not ((len(data) % window_samps) == 0):
+		#	raise AssertionError( str(len(data) ) ) 
 
 		bpm, correl_temp = bpm_detector(data,fs)
 		if bpm == None:
