@@ -87,14 +87,14 @@ def bpm_detector(data,fs):
 	# ACF
 	correl = numpy.correlate(cD_sum,cD_sum,'full') 
 
-	midpoint = len(correl) / 2
+	midpoint = len(correl) // 2
 	correl_midpoint_tmp = correl[midpoint:]
 	peak_ndx = peak_detect(correl_midpoint_tmp[min_ndx:max_ndx]);
 	if len(peak_ndx) > 1:
 		return no_audio_data()
 
 	peak_ndx_adjusted = peak_ndx[0]+min_ndx;
-	bpm = 60./ peak_ndx_adjusted * (fs/max_decimation)
+	bpm = 60./ peak_ndx_adjusted * (fs//max_decimation)
 	print bpm
 	return bpm,correl
 
