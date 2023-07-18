@@ -49,13 +49,21 @@ def bpm_detector(data,fs):
 	correl = []
 	cD_sum = []
 	levels = 4
+
+	print "asshole 1"
+	
 	max_decimation = 2**(levels-1);
+	print "asshole 2"
 	min_ndx = 60./ 220 * (fs/max_decimation)
+	print "asshole 3"
 	max_ndx = 60./ 40 * (fs/max_decimation)
 
+	print "asshole 4"
 	for loop in range(0,levels):
 		cD = []
 		# 1) DWT
+		print "asshole 5"
+		
 		if loop == 0:
 			[cA,cD] = pywt.dwt(data,'db4');
 			cD_minlen = len(cD)//max_decimation+1;
@@ -75,7 +83,7 @@ def bpm_detector(data,fs):
 		#	the detail coefs (i.e. the HPF values)
 		#	to the beginning of the array
 		cD_sum = cD[0:cD_minlen] + cD_sum;
-
+	print "asshole 6"
 	if [b for b in cA if b != 0.0] == []:
 		return no_audio_data()
 	# adding in the approximate data as well...	
@@ -83,7 +91,7 @@ def bpm_detector(data,fs):
 	cA = abs(cA);
 	cA = cA - numpy.mean(cA);
 	cD_sum = cA[0:cD_minlen] + cD_sum;
-
+	print "asshole 7"
 	# ACF
 	correl = numpy.correlate(cD_sum,cD_sum,'full') 
 
@@ -93,11 +101,17 @@ def bpm_detector(data,fs):
 	
 	correl_midpoint_tmp = correl[midpoint:]
 	peak_ndx = peak_detect(correl_midpoint_tmp[min_ndx:max_ndx]);
+	
+	print "sex 2"
+	
 	if len(peak_ndx) > 1:
 		return no_audio_data()
-
+	print "sex 3"
+	
 	peak_ndx_adjusted = peak_ndx[0]+min_ndx;
 	bpm = 60./ peak_ndx_adjusted * (fs/max_decimation)
+	print "sex 4"
+	
 	print bpm
 	return bpm,correl
 
