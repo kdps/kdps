@@ -88,6 +88,9 @@ def bpm_detector(data,fs):
 	correl = numpy.correlate(cD_sum,cD_sum,'full') 
 
 	midpoint = len(correl) // 2
+
+	print "sex"
+	
 	correl_midpoint_tmp = correl[midpoint:]
 	peak_ndx = peak_detect(correl_midpoint_tmp[min_ndx:max_ndx]);
 	if len(peak_ndx) > 1:
