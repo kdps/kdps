@@ -58,7 +58,7 @@ def bpm_detector(data,fs):
 		# 1) DWT
 		if loop == 0:
 			[cA,cD] = pywt.dwt(data,'db4');
-			cD_minlen = len(cD)/max_decimation+1;
+			cD_minlen = len(cD)//max_decimation+1;
 			cD_sum = numpy.zeros(cD_minlen);
 		else:
 			[cA,cD] = pywt.dwt(cA,'db4');
