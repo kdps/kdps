@@ -50,8 +50,8 @@ def bpm_detector(data,fs):
 	cD_sum = []
 	levels = 4
 	max_decimation = 2**(levels-1);
-	min_ndx = 60./ 220 * (fs//max_decimation)
-	max_ndx = 60./ 40 * (fs//max_decimation)
+	min_ndx = 60./ 220 * (fs/max_decimation)
+	max_ndx = 60./ 40 * (fs/max_decimation)
 
 	for loop in range(0,levels):
 		cD = []
@@ -94,7 +94,7 @@ def bpm_detector(data,fs):
 		return no_audio_data()
 
 	peak_ndx_adjusted = peak_ndx[0]+min_ndx;
-	bpm = 60./ peak_ndx_adjusted * (fs//max_decimation)
+	bpm = 60./ peak_ndx_adjusted * (fs/max_decimation)
 	print bpm
 	return bpm,correl
 
