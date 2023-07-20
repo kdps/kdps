@@ -132,7 +132,7 @@ def generateAudio(frequence: List[audioParameter]):
   obj.setsampwidth(2)
   obj.setframerate(sampleRate)
 
-  for hz in frequence.frequences:
+  for hz in frequence:
     for i in range(99999):
        value = random.randint(hz.minFrequences, hz.maxFrequences)
        data = struct.pack('<h', value)
