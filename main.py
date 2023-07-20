@@ -112,15 +112,16 @@ def main():
   return 'HelloWorld';
 
 class audioParameter(BaseModel):
-  frequences: list = []
+  minFrequences: Int
+  maxFrequences: Int
 
 @app.post("/generate_audio")
-def generateAudio(frequence: audioParameter):
+def generateAudio(frequence: List[audioParameter]):
 
   list_names = []
 
   for nm in frequence.frequences:
-    list_names.append(nm)
+    list_names.append(nm.minFrequences)
       
   sampleRate = 44100.0 # hertz
   duration = 10.0 # seconds
@@ -132,7 +133,7 @@ def generateAudio(frequence: audioParameter):
 
   for hz in frequence.frequences:
     for i in range(99999):
-       value = random.randint(hz, hz + 100)
+       value = random.randint(hz.minFrequences, hz.maxFrequences)
        data = struct.pack('<h', value)
        obj.writeframesraw( data )
   
