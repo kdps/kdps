@@ -1,6 +1,6 @@
 import wave, struct, math, random
 sampleRate = 44100.0 # hertz
-duration = 1.0 # seconds
+duration = 10.0 # seconds
 frequency = 440.0 # hertz
 obj = wave.open('sound.wav','w')
 obj.setnchannels(1) # mono
