@@ -4,7 +4,7 @@ import numpy as np
 
 if __name__ == "__main__":
 
-    samples = np.random.randn(44100)
+    samples = [np.random.randn(44100),np.random.randn(44100),np.random.randn(44100)]
     fs = 44100
     out_f = 'out.wav'
 
