@@ -120,10 +120,7 @@ class audioParameter(BaseModel):
 def generateAudio(frequence: List[audioParameter]):
 
   list_names = []
-
-  for nm in frequence.frequences:
-    list_names.append(nm.minFrequences)
-      
+  
   sampleRate = 44100.0 # hertz
   duration = 10.0 # seconds
   frequency = 440.0 # hertz
