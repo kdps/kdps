@@ -116,7 +116,12 @@ class audioParameter(BaseModel):
 
 @app.post("/generate_audio")
 def generateAudio(frequence: audioParameter):
-  
+
+  list_names = []
+
+  for nm in frequence.frequences:
+    list_names.append(nm)
+      
   sampleRate = 44100.0 # hertz
   duration = 10.0 # seconds
   frequency = 440.0 # hertz
@@ -132,7 +137,9 @@ def generateAudio(frequence: audioParameter):
        obj.writeframesraw( data )
   
   obj.close()
-  
+    
+  return list_names
+
 @app.post("/bpm_parse")
 def bpmParse():
   filename = ""
