@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 import random
 import numpy
 import pywt
+from typing import List
 
 from pydantic import BaseModel
 from scipy import signal
