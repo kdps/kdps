@@ -112,8 +112,8 @@ def main():
   return 'HelloWorld';
 
 class audioParameter(BaseModel):
-  minFrequences: Int
-  maxFrequences: Int
+  minFrequences: int
+  maxFrequences: int
 
 @app.post("/generate_audio")
 def generateAudio(frequence: List[audioParameter]):
