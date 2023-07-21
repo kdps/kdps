@@ -172,7 +172,7 @@ def read_wav(filename):
     return samps, fs
 
 
-@app.post("/bpm_api")
+@app.post("/bpm_api")
 async def bpm_api(file: UploadFile):
     UPLOAD_DIR = "./"  # 이미지를 저장할 서버 경로
     
@@ -190,6 +190,9 @@ async def bpm_api(file: UploadFile):
 
     # convert wav to mp3
     sound = AudioSegment.from_mp3(src)
+
+    sound = sound[-5000:]
+    
     sound.export(dst, format="wav")
 
 
