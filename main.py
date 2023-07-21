@@ -18,7 +18,7 @@ from pydub import AudioSegment
 from typing import List
 from pydantic import BaseModel
 from scipy import signal
-from fastapi import FastAPI
+from fastapi import FastAPI, UploadFile
 
 app = FastAPI()
 
@@ -173,7 +173,16 @@ def read_wav(filename):
 
 
 @app.post("/bpm_api")
-def bpm_api(file_name):
+async def bpm_api(file: UploadFile):
+    UPLOAD_DIR = "./"  # 이미지를 저장할 서버 경로
+    
+    content = await file.read()
+    filename = f"stream.mp3"  # uuid로 유니크한 파일명으로 변경
+    with open(os.path.join(UPLOAD_DIR, filename), "wb") as fp:
+        fp.write(content)  # 서버 로컬 스토리지에 이미지 저장 (쓰기)
+
+    file_name = "stream.mp3";
+    
     # files
     src = f"{file_name}"
     dst = f"{file_name[0:len(file_name)-4]}.wav"
